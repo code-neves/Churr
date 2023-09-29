@@ -1,0 +1,348 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap');
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:700|Golos Text:400');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    /* outline: solid 1px red !important; */
+}
+
+:root {
+    --h1: 4.210rem;
+    /* 67.36px */
+    --h2: 3.158rem;
+    /* 50.56px */
+    --h3: 2.369rem;
+    /* 37.92px */
+    --h4: 1.777rem;
+    /* 28.48px */
+    --h5: 1.333rem;
+    /* 21.28px */
+    --small: 0.750rem;
+    /* 12px */
+}
+
+.dark {
+
+    --accent: #e2572c;
+    --primary: #fae2db;
+    --text: #e3957d;
+    --secondary: #3a1308;
+    --background: #140703;
+}
+
+.light {
+    --primary: #82341c;
+    --secondary: #f7d0c5;
+    --accent: rgb(211, 71, 29);
+    --text: #240c05;
+    --background: #fef8f6;
+}
+
+html {
+    height: 100dvh;
+}
+
+body {
+    height: 100%;
+    background-color: var(--background);
+
+    font-family: 'Golos Text';
+    font-weight: 400;
+
+    transition: background-color 300ms ease;
+    padding: 0 7%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Poppins';
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 4.210rem;
+    /* 67.36px */
+}
+
+h2 {
+    font-size: 3.158rem;
+    /* 50.56px */
+}
+
+h3 {
+    font-size: 2.369rem;
+    /* 37.92px */
+}
+
+h4 {
+    font-size: 1.777rem;
+    /* 28.48px */
+}
+
+h5 {
+    font-size: 1.333rem;
+    /* 21.28px */
+}
+
+small {
+    font-size: 0.750rem;
+    /* 12px */
+}
+
+.hover-up {
+    transition: 300ms ease;
+    
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 50px -5px var(--accent);
+    }
+}
+
+.brighten {
+    transition:  300ms ease;
+
+    &:hover {
+        filter: brightness(1.2);
+    }
+}
+
+
+
+nav * {
+    font-family: 'Golos Text';
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+
+    & h2 {
+        font-size: var(--h4);
+        color: var(--accent);
+    }
+
+    & ul {
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+        align-items: center;
+        gap: 16px;
+
+        & li {
+            display: flex;
+            align-items: center;
+
+            & a {
+                color: var(--text);
+                font-size: var(--h5);
+                text-decoration: none;
+                height: 100%;
+            }
+
+            & button {
+                border: none;
+                border-radius: 90px;
+                cursor: pointer;
+                font-size: var(--h5);
+                color: var(--background);
+                background-color: var(--accent);
+                padding: 4px 24px;
+                transition: 300ms ease-in-out;
+
+                &:hover {
+                    transition: 300ms ease;
+                    
+                }
+            }
+        }
+    }
+}
+
+
+#titleContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    height: 100%;
+    width: 100%;
+
+    text-align: center;
+    & span {
+        position: relative;
+        color: var(--primary);
+        width: 100px;
+        height: 100px;
+        /* margin-right: 4.6ch; */
+
+        &:hover &:after{
+            opacity: 0;
+        }
+
+        /* &:before{
+            position: absolute;
+            content: 'churr';
+        }
+        &:after{
+            position: absolute;
+            content: 'sure';
+            background-color: var(--background);
+            bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            opacity: 1; 
+        } */
+    }
+    & h1 {
+        
+        font-size: calc(var(--h1) + 50px);
+        color: var(--accent);
+    }
+
+    & h2 {
+        font-size: var(--h2);
+        color: var(--text);
+    }
+}
+
+
+
+
+#heroButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    & a {
+        text-decoration: none;
+        cursor: pointer;
+        font-family: 'Golos Text';
+        background-color: var(--accent);
+        color: var(--background);
+        border: none;
+        font-size: var(--h4);
+        padding:7px 24px;
+        border-radius: 90px;
+    }
+
+    #AboutBut{
+        background-color: rgba(255, 255, 255, 0);
+        color: var(--text);
+        outline: 2px solid var(--text);
+
+        &:hover{
+            background-color: var(--text);
+            color: var(--background);
+        }
+    }
+}
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    #container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #d3471dd4;
+        border-radius: 30px;
+        height: 400px;
+
+        .inputContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 16px;
+            .inputValue {
+        color: var(--background);
+        text-align: center;
+        font-size: var(--h1);
+            }
+
+            .inputControl {
+        background-color: var(--primary);
+        color: var(--background);
+        font-size: var(--h3);
+        border: none;
+        border-radius: 12px;
+        height: 45px;
+        aspect-ratio: 1/1;
+            }
+        }
+    }
+}
+
+
+.adultoIcon {
+    /* background-image: url(./assets/pessoas.png); */
+
+    mask: url(./assets/pessoas.png);
+    mask-size: contain;
+    mask-mode: alpha;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    -webkit-mask: url(./assets/pessoas.png);
+    -webkit-mask-position: center;
+    -webkit-mask-size: cover;
+    -webkit-mask-mode: alpha;
+    -webkit-mask-repeat: no-repeat;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-color: var(--primary);
+    
+    height: 120px;
+    width: 50px;
+}
+
+.criancaIcon{
+    mask: url(./assets/pessoas.png);
+    mask-size: contain;
+    mask-mode: alpha;
+    mask-repeat: no-repeat;
+    mask-position: bottom;
+
+    -webkit-mask: url(./assets/pessoas.png);
+    -webkit-mask-position: center;
+    -webkit-mask-size: cover;
+    -webkit-mask-mode: alpha;
+    -webkit-mask-repeat: no-repeat;
+
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+
+    background-color: var(--primary);
+    position: relative;
+
+    
+    height: 90px;
+    aspect-ratio: 1/2;
+}
+
+/* .Calc-Section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+} */
