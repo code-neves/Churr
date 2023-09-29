@@ -112,7 +112,7 @@ small {
     transition:  300ms ease;
 
     &:hover {
-        filter: brightness(1.2);
+        filter: brightness(1.3);
     }
 }
 
@@ -122,11 +122,24 @@ nav * {
     font-family: 'Golos Text';
 }
 
-nav {
+header {
+    position: fixed;
+
     display: flex;
     justify-content: space-between;
-    padding: 0.8rem 0;
-
+    left: 0;
+    width: 100%;
+    background-color: var(--background, 0.5) rgb(102, 51, 153);
+    transition: background-color 300ms ease;
+    backdrop-filter: blur(50px);
+    z-index: 2;
+}
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.8rem 3%;
+    z-index: 3;
     & h2 {
         font-size: var(--h4);
         color: var(--accent);
@@ -181,32 +194,8 @@ nav {
     width: 100%;
 
     text-align: center;
-    & span {
-        position: relative;
-        color: var(--primary);
-        width: 100px;
-        height: 100px;
-        /* margin-right: 4.6ch; */
 
-        &:hover &:after{
-            opacity: 0;
-        }
-
-        /* &:before{
-            position: absolute;
-            content: 'churr';
-        }
-        &:after{
-            position: absolute;
-            content: 'sure';
-            background-color: var(--background);
-            bottom: 0;
-            top: 0;
-            left: 0;
-            right: 0;
-            opacity: 1; 
-        } */
-    }
+    
     & h1 {
         
         font-size: calc(var(--h1) + 50px);
@@ -214,19 +203,59 @@ nav {
     }
 
     & h2 {
+        max-width: 900px;
         font-size: var(--h2);
         color: var(--text);
     }
 }
 
+#spanText {
+    position: relative;
+    color: var(--primary);
+    
+    height: 100px;
+    margin-right: 4.6ch;
+    
 
+    &:hover #spanText::after{
+        opacity: 0;
+    }
 
+     &:before{
+        position: absolute;
+        content: 'churr';
+        opacity: 1;
+        text-decoration: underline;
+        transition: 200ms ease;
+    }
+    &:after{
+        text-decoration: underline;
+        position: absolute;
+        width: fit-content;
+        content: 'sure';
+        background-color: var(--background);
+        transition: 300ms ease;
+        opacity: 0; 
+        left: 13px;
+    } 
+}
+
+#spanText:hover::after{
+    transition: 200ms ease;
+    opacity: 1;
+}
+#spanText:hover::before{
+    transition: 200ms ease;
+    opacity: 0;
+}
 
 #heroButtons{
+    margin: 2rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 16px;
+
     & a {
         text-decoration: none;
         cursor: pointer;
@@ -235,14 +264,14 @@ nav {
         color: var(--background);
         border: none;
         font-size: var(--h4);
-        padding:7px 24px;
+        padding:7px 28px;
         border-radius: 90px;
     }
 
     #AboutBut{
         background-color: rgba(255, 255, 255, 0);
         color: var(--text);
-        outline: 2px solid var(--text);
+        border: 2px solid var(--text);
 
         &:hover{
             background-color: var(--text);
@@ -255,38 +284,6 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    #container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        background-color: #d3471dd4;
-        border-radius: 30px;
-        height: 400px;
-
-        .inputContainer {
-        display: flex;
-        justify-content: space-between;
-        align-items: end;
-        gap: 16px;
-            .inputValue {
-        color: var(--background);
-        text-align: center;
-        font-size: var(--h1);
-            }
-
-            .inputControl {
-        background-color: var(--primary);
-        color: var(--background);
-        font-size: var(--h3);
-        border: none;
-        border-radius: 12px;
-        height: 45px;
-        aspect-ratio: 1/1;
-            }
-        }
-    }
 }
 
 
@@ -340,9 +337,37 @@ main {
     aspect-ratio: 1/2;
 }
 
-/* .Calc-Section{
-    display: flex;
+.Calc-Section{
     justify-content: center;
-    align-items: center;
-    width: 100%;
-} */
+    #container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #d3471dd4;
+        border-radius: 30px;
+        height: 400px;
+
+        .inputContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 16px;
+            .inputValue {
+        color: var(--background);
+        text-align: center;
+        font-size: var(--h1);
+            }
+
+            .inputControl {
+        background-color: var(--primary);
+        color: var(--background);
+        font-size: var(--h3);
+        border: none;
+        border-radius: 12px;
+        height: 45px;
+        aspect-ratio: 1/1;
+            }
+        }
+    }
+}
