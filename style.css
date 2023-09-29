@@ -221,25 +221,25 @@ nav {
         content: 'churr';
         opacity: 1;
         text-decoration: underline;
-        transition: 350ms ease;
+        transition: 300ms ease;
     }
     &:after{
         text-decoration: underline;
         position: absolute;
         width: fit-content;
         content: 'sure';
-        transition: 335ms ease;
+        transition: 300ms ease;
         opacity: 0; 
         left: 13px;
     } 
 }
 
 #spanText:hover::after{
-    transition: 350ms ease;
+    transition: 300ms ease;
     opacity: 1;
 }
 #spanText:hover::before{
-    transition: 350ms ease;
+    transition: 300ms ease;
     opacity: 0;
 }
 
