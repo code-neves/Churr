@@ -216,36 +216,30 @@ nav {
     height: 100px;
     margin-right: 4.6ch;
     
-
-    &:hover #spanText::after{
-        opacity: 0;
-    }
-
-     &:before{
+    &:before{
         position: absolute;
         content: 'churr';
         opacity: 1;
         text-decoration: underline;
-        transition: 200ms ease;
+        transition: 350ms ease;
     }
     &:after{
         text-decoration: underline;
         position: absolute;
         width: fit-content;
         content: 'sure';
-        background-color: var(--background);
-        transition: 300ms ease;
+        transition: 335ms ease;
         opacity: 0; 
         left: 13px;
     } 
 }
 
 #spanText:hover::after{
-    transition: 200ms ease;
+    transition: 350ms ease;
     opacity: 1;
 }
 #spanText:hover::before{
-    transition: 200ms ease;
+    transition: 350ms ease;
     opacity: 0;
 }
 
