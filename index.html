@@ -5,70 +5,291 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Churr</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="script" href="script.js">
+    <link rel="stylesheet" href="./css/style.css">
+    
 </head>
 
 <body class="dark">
-    <header>
-        <nav>
-            <h2 class="brighten">Churr<h2>
+    <div class="mainwrapper">
+        <main id="home">
+            <header>
+                <nav>
+                    <a class="brighten" id="logo" tabindex="0" href="#home">Churr</a>
                     <ul>
-                        <li><a href="" class="brighten">Linkedin</a></li>
-                        <li><a href="" class="brighten">Github</a></li>
-                        <li><button class="hover-up brighten" id="themeBut">Theme</button></li>
+
+                        <li><button class="hover-up" id="themeBut" tabindex="0">Theme</button></li>
                     </ul>
-        </nav>
-    </header>
-    <main>
+                </nav>
+            </header>
 
-        <div id="titleContainer">
-            <h1 class="brighten">Churr</h1>
-            <h2 class="brighten">The app that makes you  <span class="brighten" id="spanText"></span> that your barbecue will have enough.</h2>
-            <div id="heroButtons">
-                <a class="brighten hover-up" id="CalculateBut" href="#container">Calculate</a>
-                <a class="brighten" id="AboutBut" >About us</a>
+            <div id="titleContainer">
+                <h1 class="brighten">Churr</h1>
+                <h2 class="brighten">The app that makes <span id="spanText"></span> your barbecue will be enough.
+                </h2>
+                <div id="heroButtons">
+                    <a class="hover-up" id="CalculateBut" href="#container" tabindex="0">Calculate</a>
+
+                    <a class="brighten " id="AboutBut" tabindex="0">About us</a>
+                </div>
             </div>
-        </div>
 
 
-    </main>
-    <main class="Calc-Section">
-        <div id="container">
-    
-            <div id="adultoContainer" class="inputContainer">
-    
-                <div class="adultoIcon"></div>
-    
-                <div>
-                    <div id="adultoCounter" class="inputValue brighten">1</div>
-                    <div id="adultoButtons">
-                        <button class="brighten inputControl" id="adultoRemove">-</button>
-                        <button class="brighten inputControl" id="adultoAdd">+</button>
+        </main>
+        <main class="Calc-Section">
+            <div id="container">
+                <div class="calcInnerWrap">
+                    <h2>How many people?</h2>
+
+                    <div class="peopleContainer" id="peopleContainer">
+
+                        <div id="adultoContainer" class="inputContainer">
+
+                            <div class="adultoIcon"></div>
+
+                            <div class="counterWrap">
+                                <div id="adultoCounter" class="inputValue brighten">0</div>
+                                <div id="adultoButtons" class="inputButtonsContainer">
+                                    <button class=" inputControl" id="adultoRemove" tabindex="0">-</button>
+                                    <button class=" inputControl" id="adultoAdd" tabindex="0">+</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div id="criancaContainer" class="inputContainer">
+
+                            <div class="criancaIcon"></div>
+                            <div class="counterWrap">
+                                <div id="criancaCounter" class="inputValue brighten">0</div>
+                                <div id="criancaButtons" class="inputButtonsContainer">
+                                    <button class=" inputControl" id="criancaRemove" tabindex="0">-</button>
+                                    <button class=" inputControl" id="criancaAdd" tabindex="0">+</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <h2>What are we eating?</h2>
+
+                    <div class="productsContainer">
+
+                        <div class="foodContainer">
+                            <ul class="not-selectable">
+                                <li>Picanha</li>
+                                <li>Sausage</li>
+                                <li>Flank Steak</li>
+                                <li>Beef Ribs</li>
+                                <li>Chicken Heart</li>
+                                <li>Sirloin</li>
+                                <li>Maminha</li>
+                                <li>Chicken</li>
+                                <li>Pork Ribs</li>
+                                <li>Calabrese Sausage</li>
+                                <li>Cupim</li>
+                                <li>Pork Leg</li>
+                            </ul>
+                        </div>
+
+                        <h2>What are we drinking?</h2>
+
+                        <div class="drinksContainer">
+                            <ul class="not-selectable">
+                                <li>Beer</li>
+                                <li>Soda</li>
+                                <li>Water</li>
+                                <li>Juice</li>
+                                <li>Wine</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    </div>  
+                    <div class="resultContainer">
+
+                    <ul id="peopleList">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <b> <h4>People</h4></b>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>Adults</td>
+                                    <td class="T-A-R">
+                                        <span class="men-quant" id="adultoCounterLi">-</span>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>Children</td>
+                                    <td class="T-A-R">
+                                        <span class="children-quant" id="criancaCounterLi">-<span>
+                                    </span></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </ul>
+
+
+                    <table id="foodList">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b><h4>Meat</h4></b>
+                                </td>
+                            </tr>
+                    
+                            <tr>
+                                <td>Picanha</td>
+                                <td class="T-A-R">
+                                    <span id="picanhaCounterLi">-</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sausage</td>
+                                <td class="T-A-R">
+                                    <span id="sausageCounterLi">-</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Flank Steak</td>
+                                <td class="T-A-R">
+                                    <span id="flanksteakCounterLi">-</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Beef Ribs</td>
+                                <td class="T-A-R">
+                                    <span id="beefribsCounterLi">-</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Chicken Heart</td>
+                                <td class="T-A-R">
+                                    <span id="chickenheartCounterLi">-</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sirloin</td>
+                                <td class="T-A-R">
+                                    <span id="sirloinCounterLi">-</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Maminha</td>
+                                <td class="T-A-R">
+                                    <span id="maminhaCounterLi">-</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Chicken</td>
+                                <td class="T-A-R">
+                                    <span id="chickenCounterLi">-</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pork Ribs</td>
+                                <td class="T-A-R">
+                                    <span id="porkribsCounterLi">-</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Calabrese Sausage</td>
+                                <td class="T-A-R">
+                                    <span id="calabresesausageCounterLi">-</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cupim</td>
+                                <td class="T-A-R">
+                                    <span id="cupimCounterLi">-</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pork Leg</td>
+                                <td class="T-A-R">
+                                    <span id="porklegCounterLi">-</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><h5>Total Weight:</h5></td>
+                                <td class="T-A-R">
+                                    <span id="meatWeightOutput">0g</span>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                    
+                    
+                    
+                    
+                    <table id="drinksList">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <b><h4>Drinks</h4></b>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Beer - 600ml</td>
+                            <td class="T-A-R">
+                              <span id="beerCounterLi">-</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Soda - 2L</td>
+                            <td class="T-A-R">
+                              <span id="sodaCounterLi">-</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Water - 1L</td>
+                            <td class="T-A-R">
+                              <span id="waterCounterLi">-</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Juice - 700ml</td>
+                            <td class="T-A-R">
+                              <span id="juiceCounterLi">-</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Wine - 650ml</td>
+                            <td class="T-A-R">
+                              <span id="wineCounterLi">-</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><h5>Drinks quantity:</h5></td>
+                            <td class="T-A-R">
+                              <span id="drinkWeightOutput">-</span>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      
                 </div>
-    
+
+                </div>
+
+                
             </div>
-    
-            <div id="criancaContainer" class="inputContainer">
-    
-                <div class="criancaIcon"></div>
-                <div>
-                <div id="criancaCounter" class="inputValue brighten">1</div>
-                <div id="criancaButtons">
-                    <button class="brighten inputControl" id="criancaRemove">-</button>
-                    <button class="brighten inputControl" id="criancaAdd">+</button>
-                </div>
-                </div>
-    
-            </div>
-    
-        </div>
-        
-        
-    </main>
-    <footer>EU AMO MINHA NAMORADA</footer>
-    <script src="script.js"></script>
+
+            <!-- <footer>EU AMO MINHA NAMORADA<li><a href="" class="brighten" tabindex="0">Linkedin</a></li>
+                <li><a href="" class="brighten" tabindex="0">Github</a></li></footer> -->
+        </main>
+    </div>
+
+    <!-- <script type="module" src="./scripts/DOMHandler.js"></script> -->
+    <!-- <script src="./scripts/productsContainer.js"></script> -->
+    <!-- <script src="./scripts/resultContainer.js"></script> -->
+    <script src="./scripts/theme-handler.js"></script>
+    <script src="./scripts/counters.js"></script>
+    <script src="./scripts/script.js"></script>
 </body>
 
 </html>
