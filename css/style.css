@@ -14,7 +14,9 @@
 
     /* outline: solid 1px red !important; */
 }
-
+*::-webkit-scrollbar {
+    display: none;
+}
 :root {
     font-size: 10px;
     --h1: 4.21rem;
