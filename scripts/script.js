@@ -1,9 +1,6 @@
 const selectedMeats = [];
 let selectedDrinks = [];
 
-const foodItems = document.querySelectorAll('.foodContainer li');
-const drinkItems = document.querySelectorAll('.drinksContainer li');
-
 const meatWeights = {
   Picanha: 400,
   Sausage: 200,
@@ -20,25 +17,24 @@ const meatWeights = {
 };
 
 const drinkWeights = {
-  Beer: 500, // 500ml per serving
-  Soda: 300, // 300ml per serving
-  Water: 200, // 200ml per serving
-  Juice: 250, // 250ml per serving
-  Wine: 150, // 150ml per serving
+  Beer: 500,
+  Soda: 300,
+  Water: 200,
+  Juice: 250,
+  Wine: 150,
 };
 
 const drinkAmounts = {
-  Beer: 3, // 3 serving per adult
-  Soda: 0.2, // 1 serving per 3 adults
-  Water: 1, // 1 serving per adult
-  Juice: 1, // 1 serving per adult
-  Wine: 1, // 1 serving per adult
+  Beer: 3,
+  Soda: 0.2,
+  Water: 1,
+  Juice: 1,
+  Wine: 1,
 };
 
 function updateSelectedMeats(item) {
-  const meatType = item.textContent.replace(/\s/g, ''); // Remove spaces
+  const meatType = item.textContent.replace(/\s/g, '');
   item.classList.toggle('checked');
-  console.log('Selected Meats:', selectedMeats);
 
   if (item.classList.contains('checked')) {
     selectedMeats.push(meatType);
@@ -49,22 +45,19 @@ function updateSelectedMeats(item) {
     }
   }
 
-  // Recalculate the individual meat weights and the total meat weight
   updateWeights('meat');
 }
 
 function updateSelectedDrinks(item) {
-  const drinkType = item.textContent.replace(/\s/g, ''); // Remove spaces
+  const drinkType = item.textContent.replace(/\s/g, '');
   item.classList.toggle('checked');
-  console.log('Selected Drinks:', selectedDrinks);
 
   if (item.classList.contains('checked')) {
     if (drinkType === 'Beer' || drinkType === 'Wine') {
       if (adultCount > 0) {
-        selectedDrinks.push(drinkType);
-      } else {
-        // Handle the case where there are no adults
-        // You can show an alert or any other appropriate action
+        for (let i = 0; i < adultCount; i++) {
+          selectedDrinks.push(drinkType);
+        }
       }
     } else {
       selectedDrinks.push(drinkType);
@@ -76,36 +69,16 @@ function updateSelectedDrinks(item) {
     }
   }
 
-  // Recalculate the individual drink weights and the total drink weight
   updateWeights('drink');
 }
 
-function updateDrinkAmount() {
-  const sodaServings = Math.floor(adultCount / drinkAmounts.Soda);
-  const beerServings = adultCount;
-  const juiceServings = adultCount + childCount;
-
-  // Update individual drink weight spans
-  const sodaWeightSpan = document.getElementById('sodaCounterLi');
-  const beerWeightSpan = document.getElementById('beerCounterLi');
-  const juiceWeightSpan = document.getElementById('juiceCounterLi');
-
-  
-
-  // Update the total drink amount
-  const drinkWeightOutput = document.getElementById('drinkWeightOutput');
-  drinkWeightOutput.textContent = `${sodaServings} servings (Soda) - ${beerServings} servings (Beer) - ${juiceServings} servings (Juice)`;
-}
-
 function updateWeights(type) {
-  console.log('Updating weights for:', type);
-  const weightOutput = document.getElementById(`${type}WeightOutput`);
+  let weightOutput = document.getElementById(`${type}WeightOutput`);
   let totalWeight = 0;
 
   const selectedItems = type === 'meat' ? selectedMeats : selectedDrinks;
   const itemWeights = type === 'meat' ? meatWeights : drinkAmounts;
 
-  // Reset individual weight spans to '-' for all items
   for (const item in itemWeights) {
     const itemSpanId = `${item.toLowerCase()}CounterLi`;
     const itemWeightSpan = document.getElementById(itemSpanId);
@@ -121,7 +94,6 @@ function updateWeights(type) {
         const individualWeight = baseWeight * (adultCount + childCount * 0.5);
         totalWeight += individualWeight;
 
-        // Construct the correct ID for the weight span
         const itemSpanId = `${item.toLowerCase()}CounterLi`;
         const itemWeightSpan = document.getElementById(itemSpanId);
 
@@ -130,6 +102,7 @@ function updateWeights(type) {
         }
       });
       break;
+      
     case 'drink':
       selectedItems.forEach((item) => {
         const baseWeight = itemWeights[item];
@@ -138,11 +111,9 @@ function updateWeights(type) {
         switch (item) {
           case 'Beer':
           case 'Wine':
-            // Only count alcoholic drinks with adults
             individualServings = adultCount;
             break;
           default:
-            // For non-alcoholic drinks, count with both adults and children
             individualServings = Math.ceil(adultCount + childCount * 0.5);
             break;
         }
@@ -150,7 +121,6 @@ function updateWeights(type) {
         const individualWeight = baseWeight * individualServings;
         totalWeight += Math.ceil(individualWeight);
 
-        // Construct the correct ID for the weight span
         const itemSpanId = `${item.toLowerCase()}CounterLi`;
         const itemWeightSpan = document.getElementById(itemSpanId);
 
@@ -162,12 +132,11 @@ function updateWeights(type) {
     default:
       break;
   }
-
-  console.log('Total weight:', totalWeight);
   weightOutput.textContent = `${totalWeight}${type === 'meat' ? 'g' : ' Units'}`;
 }
 
-
+const foodItems = document.querySelectorAll('.foodContainer li');
+const drinkItems = document.querySelectorAll('.drinksContainer li');
 
 foodItems.forEach((item) => {
   item.addEventListener('click', () => {
@@ -181,6 +150,4 @@ drinkItems.forEach((item) => {
   });
 });
 
-// Initialize the meat weights
-updateWeights('meat');
-
+updateWeights('meat', 'drink');

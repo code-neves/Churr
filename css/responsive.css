@@ -1,0 +1,36 @@
+/* Base styles here */
+
+/* Small screens (phones) */
+@media screen and (max-width: 767px) {
+    /* Adjust styles for small screens here */
+    body {
+      font-size: 16px; /* Adjust font size for better readability on small screens */
+    }
+  }
+  
+  /* Medium screens (tablets) */
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Adjust styles for medium screens here */
+    .mainwrapper {
+      padding: 0 5%; /* Adjust container padding for better layout on tablets */
+    }
+  }
+  
+  /* Large screens (desktops) */
+  @media screen and (min-width: 1024px) {
+    /* Adjust styles for large screens here */
+    .mainwrapper {
+      padding: 0 10%; /* Adjust container padding for better layout on desktops */
+    }
+  
+    .login {
+      /* Adjust login styles for larger screens */
+    }
+  }
+  
+  /* Extra-large screens (large desktops) */
+  @media screen and (min-width: 1440px) {
+    /* Adjust styles for extra-large screens here */
+    /* You can add specific styles for very large screens */
+  }
+  
