@@ -1,0 +1,92 @@
+@media screen and (min-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+
+  header {
+
+    & nav {
+      #logo {
+        font-size: calc(var(--h5) + 1.2vw);
+      }
+
+      & ul {
+        & li {
+          & button {
+            font-size: calc(var(--h5) + 0.35vw);
+          }
+        }
+      }
+    }
+  }
+  main{
+    padding: 0 7% !important;
+  }
+  .Home {
+    #titleContainer {
+
+      & h1 {
+        font-size: calc(var(--h1) + 14vw);
+      }
+
+      & h2 {
+        font-size: calc(var(--h2) + 0.6vw);
+        max-width: 80%;
+        text-wrap: balance;
+      }
+    }
+  }
+
+  .loginWrap {
+    width: 100%;
+
+    .loginContainer {
+      max-width: 450px;
+    }
+
+    & input {
+      font-size: var(--h5);
+    }
+  }
+  .Calculator{
+    #container{
+      
+      .calcInnerWrap {
+        gap: 16px !important;
+    
+        & h2 {
+          font-size: calc(var(--h5) + 1.1vw);
+        }
+
+        & ul {
+
+          & li {
+            font-size: calc(var(--small) + 0.3vw);
+          }
+        }
+      }
+    }
+
+    }
+  }
+
+
+/* Large screens (desktops) */
+@media screen and (min-width: 1024px) {
+
+  :root {
+    font-size: 16px;
+  }
+
+  .loginWrap {
+    .loginContainer {
+      max-width: 800px;
+    }
+  }
+}
+
+/* Extra-large screens (large desktops) */
+@media screen and (min-width: 1440px) {
+  /* Adjust styles for extra-large screens here */
+  /* You can add specific styles for very large screens */
+}
