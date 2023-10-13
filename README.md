@@ -2,7 +2,7 @@
 
 Churr is a simple web-based BBQ calculator that helps you estimate the total weight of meats and drinks you'll need for your barbecue event. It's a handy tool to plan your barbecue and ensure that you have enough supplies to satisfy your guests.
 
-![Churr Screenshot](https://your-image-url-here.com)
+![2023-10-13 14-31-08 (1)](https://github.com/code-neves/Churr/assets/127349682/76749c95-4a04-4bc9-957e-400e3e85fc15)
 
 ## Features
 
@@ -27,9 +27,11 @@ You can access Churr online by following this [link](https://code-neves.github.i
 
 Include screenshots of your Churr application in action.
 
-![Screenshot 1](https://your-screenshot-url-1.com)
-![Screenshot 2](https://your-screenshot-url-2.com)
-![Screenshot 3](https://your-screenshot-url-3.com)
+![image](https://github.com/code-neves/Churr/assets/127349682/6419db5b-00d5-44fc-aa1a-a4cde90d347c)
+![image](https://github.com/code-neves/Churr/assets/127349682/effc5076-7ab1-417f-bd0c-6db1f277542f)
+![image](https://github.com/code-neves/Churr/assets/127349682/f186f403-7213-4424-82b4-fbf65bf6e3a9)
+
+
 
 ## Usage
 
@@ -54,7 +56,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-- Special thanks to all the barbecue enthusiasts who inspired the creation of Churr.
+- Emerson Vieira for the background image.
 
 ## About
 
