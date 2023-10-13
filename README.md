@@ -25,19 +25,16 @@ You can access Churr online by following this [link](https://code-neves.github.i
 
 ## Screenshots
 
-Include screenshots of your Churr application in action.
-
 ![image](https://github.com/code-neves/Churr/assets/127349682/6419db5b-00d5-44fc-aa1a-a4cde90d347c)
-![image](https://github.com/code-neves/Churr/assets/127349682/effc5076-7ab1-417f-bd0c-6db1f277542f)
-![image](https://github.com/code-neves/Churr/assets/127349682/f186f403-7213-4424-82b4-fbf65bf6e3a9)
-
-
+![image](https://github.com/code-neves/Churr/assets/127349682/c48428b2-8449-4866-969c-ed60cae84ee9)
+![image](https://github.com/code-neves/Churr/assets/127349682/33b04a62-7ee8-44a7-830a-8600dbeced50)
+![image](https://github.com/code-neves/Churr/assets/127349682/e7224400-39cc-46a9-a88f-c1f629aefa91)
 
 ## Usage
 
+- Customize the number of adult and child guests.
 - Select meats and drinks for your barbecue.
 - Observe individual weights and total weight updates.
-- Customize the number of adult and child guests.
 - Plan your barbecue event more effectively with Churr.
 
 ## Contributing
