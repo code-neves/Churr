@@ -59,4 +59,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 Churr is an open-source project designed to simplify barbecue planning and ensure you have enough supplies for your event.
 
-[![GitHub License](https://img.shields.io/github/license/code-neves/Churr)](https://github.com/code-neves/Churr/LICENSE.md)
+[![GitHub](https://img.shields.io/github/license/code-neves/Churr)](https://github.com/code-neves/Churr/LICENSE.md)
+
